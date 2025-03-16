@@ -1,0 +1,122 @@
+footer {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #ddd;
+    padding: 40px 0;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    color: #ff9800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section h3::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #ff9800;
+    margin-top: 5px;
+}
+
+/* Social Icons */
+.social-icons a {
+    font-size: 20px;
+    color: #ddd;
+    margin: 5px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    color: #ff9800;
+}
+
+/* Quick Links */
+.quick-links {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links li {
+    margin: 5px 0;
+}
+
+.quick-links a {
+    color: #ffcc80;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.quick-links a:hover {
+    color: #e68a00;
+    transform: translateX(5px);
+}
+
+/* Contact Info */
+.contact-info p {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.contact-info i {
+    color: #ff9800;
+    margin-right: 10px;
+}
+
+/* About Developers - Special Highlight */
+.about-developers a {
+    font-family: "Cursive", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.about-developers a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ff9800;
+    transform: scale(1.1);
+}
+
+/* Copyright */
+.footer-bottom {
+    background: black;
+    color: white;
+    padding: 10px 0;
+    font-size: 12px;
+    margin-top: 20px;
+}

@@ -1,0 +1,59 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.login-toggle {
+    padding: 8px 15px;
+    background: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-toggle:hover {
+    background: #e68a00;
+}
+
+.login-options {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-options a {
+    display: block;
+    padding: 8px;
+    color: black;
+    text-decoration: none;
+}
+
+.login-options a:hover {
+    background: #f1f1f1;
+}
