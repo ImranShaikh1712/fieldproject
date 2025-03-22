@@ -6,13 +6,20 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.querySelector("input[type='email']").value;
         const password = document.querySelector("input[type='password']").value;
 
-        // Required credentials (Replace with backend validation in real applications)
-        const validEmail = "user@example.com";
-        const validPassword = "password123";
+        // Allowed credentials
+        const validUsers = [
+            { email: "imranvub45@gmail.com", password: "imran123" },
+            { email: "ganesh@gmail.com", password: "ganesh123" },
+            { email: "vishnu@gmail.com", password: "vishnu123" },
+            { email: "bhoomika@gmail.com", password: "bhoomika123" }
+        ];
 
-        if (email === validEmail && password === validPassword) {
+        // Check if credentials match any of the valid users
+        const isValid = validUsers.some(user => user.email === email && user.password === password);
+
+        if (isValid) {
             alert("Login Successful!");
-            window.location.href = "dashboard.html"; // Redirect to dashboard or homepage
+            window.location.href = "dashboard.html"; // Redirect to dashboard
         } else {
             alert("Invalid email or password. Please try again.");
         }
