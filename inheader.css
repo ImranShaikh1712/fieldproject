@@ -1,0 +1,59 @@
+/* General Header Styling */
+.header {
+    background: #222;
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Content */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Logo and Title */
+.header h1 {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    gap: 10px;
+}
+
+.header img {
+    height: 45px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav a:hover {
+    color: #ffce56;
+    text-decoration: underline;
+}
+
+/* Right side navigation */
+.nav-right {
+    margin-left: auto;
+    display: flex;
+    gap: 15px;
+}

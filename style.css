@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    background: #f5f5f5;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Dark blue gradient */
     color: white;
 }
 .login-btn {
@@ -25,7 +25,7 @@ body {
 .hero {
     position: relative;
     height: 100vh;
-    background: url('univ\ -\ Copy.jpeg') no-repeat center center/cover;
+    background: url('finaluniv.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,14 +61,16 @@ body {
 }
 
 .animated-text span {
-    color: #ff9800;
+    color:black;
 }
 
 .subtext {
     font-size: 22px;
-    color: #ffcc80;
+    color: black;
     margin-top: 10px;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.6); /* Adds a soft white glow around text */
 }
+
 
 @keyframes floatText {
     0% { transform: translateY(0px); }
@@ -158,4 +160,37 @@ body {
 .visit-btn:hover {
     background: #e68a00;
     transform: scale(1.1);
+}
+/* Hero Text Animation */
+.animated-text {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9);
+    color: white;
+    animation: fadeText 3s infinite alternate ease-in-out;
+}
+
+/* Text color animation (fading in and out) */
+@keyframes fadeText {
+    0% { opacity: 0; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.1); }
+}
+
+/* Fix Carousel Image */
+.carousel-container {
+    width: 50%;
+    margin: 50px auto;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel img {
+        height: 300px;
+    }
+}
+
+.carousel img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
 }
