@@ -12,103 +12,118 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="logo">
-            <img src="homelogo.jpg" alt="Logo">
-        </div>
-        <h1 class="title">Student Activity Hub</h1>
-        <button class="login-btn" onclick="location.href='login.html';">Login</button>
-    </header>
-    
+<!-- Header -->
+<header class="header">
+    <div class="logo">
+        <img src="homelogo.jpg" alt="Logo">
+    </div>
+    <h1 class="title">Student Activity Hub</h1>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1 class="animated-text">Welcome to the <span>Student Activity Hub</span></h1>
-            <p class="subtext">Connecting Students with Activities and Opportunities</p>
+    <div id="auth-buttons">
+        <!-- Login/Logout buttons dynamically inserted here -->
+    </div>
+</header>
+
+<script>
+    const authButtons = document.getElementById("auth-buttons");
+    const user = sessionStorage.getItem("loggedInUser");
+
+    if (!user) {
+        authButtons.innerHTML = `<button class="login-btn" onclick="location.href='login.html';">Login</button>`;
+    } else {
+        authButtons.innerHTML = `<button class="login-btn" onclick="logout()">Logout</button>`;
+    }
+
+    function logout() {
+        sessionStorage.removeItem("loggedInUser");
+        window.location.href = "login.html";
+    }
+</script>
+
+<!-- Hero Section -->
+<div class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1 class="animated-text">Welcome to the <span>Student Activity Hub</span></h1>
+        <p class="subtext">Connecting Students with Activities and Opportunities</p>
+    </div>
+</div>
+
+<!-- Activities Section -->
+<div class="activities-intro">
+    <h2>Get into the Activities</h2>
+    <p>Explore various student clubs and organizations.</p>
+</div>
+
+<!-- Profile Sections -->
+<div class="profiles-container">
+    <div class="profile-card" onclick="location.href='sac.html';">
+        <img src="sac.png" alt="SAC">
+        <div class="profile-info">
+            <h2>SAC</h2>
+            <p>Empowering student governance and activities.</p>
+            <button class="visit-btn">Visit</button>
         </div>
     </div>
 
-    <!-- Activities Section -->
-    <div class="activities-intro">
-        <h2>Get into the Activities</h2>
-        <p>Explore various student clubs and organizations.</p>
-    </div>
-
-    <!-- Profile Sections -->
-    <div class="profiles-container">
-        <div class="profile-card" onclick="location.href='sac.html';">
-            <img src="sac.png" alt="SAC">
-            <div class="profile-info">
-                <h2>SAC</h2>
-                <p>Empowering student governance and activities.</p>
-                <button class="visit-btn">Visit</button>
-            </div>
-        </div>
-
-        <div class="profile-card" onclick="location.href='ueac.html';">
-            <img src="nss.jpeg" alt="NSS">
-            <div class="profile-info">
-                <h2>UEAC</h2>
-                <p>Volunteer to bring social change.</p>
-                <button class="visit-btn">Visit</button>
-            </div>
-        </div>
-
-        <div class="profile-card" onclick="location.href='ncc.html';">
-            <img src="ncc.jpeg" alt="NCC">
-            <div class="profile-info">
-                <h2>NCC</h2>
-                <p>Building discipline, leadership, and patriotism.</p>
-                <button class="visit-btn">Visit</button>
-            </div>
-        </div>
-
-        <div class="profile-card" onclick="location.href='ecell.html';">
-            <img src="ecell.png" alt="E-Cell">
-            <div class="profile-info">
-                <h2>E-Cell</h2>
-                <p>Innovation, startups, and leadership.</p>
-                <button class="visit-btn">Visit</button>
-            </div>
+    <div class="profile-card" onclick="location.href='ueac.html';">
+        <img src="nss.jpeg" alt="NSS">
+        <div class="profile-info">
+            <h2>UEAC</h2>
+            <p>Volunteer to bring social change.</p>
+            <button class="visit-btn">Visit</button>
         </div>
     </div>
 
-    <div class="carousel-container">
-        <div id="activityCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="slider3.JPG" class="d-block w-100" alt="Event 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="slider2.JPG" class="d-block w-100" alt="Event 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="slider1.JPG" class="d-block w-100" alt="Event 3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#activityCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#activityCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+    <div class="profile-card" onclick="location.href='ncc.html';">
+        <img src="ncc.jpeg" alt="NCC">
+        <div class="profile-info">
+            <h2>NCC</h2>
+            <p>Building discipline, leadership, and patriotism.</p>
+            <button class="visit-btn">Visit</button>
         </div>
     </div>
-    
-    
+
+    <div class="profile-card" onclick="location.href='ecell.html';">
+        <img src="ecell.png" alt="E-Cell">
+        <div class="profile-info">
+            <h2>E-Cell</h2>
+            <p>Innovation, startups, and leadership.</p>
+            <button class="visit-btn">Visit</button>
+        </div>
+    </div>
+</div>
+
+<div class="carousel-container">
+    <div id="activityCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="slider3.JPG" class="d-block w-100" alt="Event 1">
+            </div>
+            <div class="carousel-item">
+                <img src="slider2.JPG" class="d-block w-100" alt="Event 2">
+            </div>
+            <div class="carousel-item">
+                <img src="slider1.JPG" class="d-block w-100" alt="Event 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#activityCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#activityCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
 
 <!-- Footer -->
 <footer>
     <div class="footer-container">
-        
-        <!-- Social Media -->
         <div class="footer-section">
             <h3>Follow Us</h3>
             <div class="social-icons">
@@ -119,7 +134,6 @@
             </div>
         </div>
 
-        <!-- Quick Links -->
         <div class="footer-section">
             <h3>Quick Links</h3>
             <ul class="quick-links">
@@ -131,7 +145,6 @@
             </ul>
         </div>
 
-        <!-- Contact Information -->
         <div class="footer-section contact-info">
             <h3>Contact Us</h3>
             <p><i class="fa-solid fa-envelope"></i> studenthub@university.com</p>
@@ -139,24 +152,16 @@
             <p><i class="fa-solid fa-map-marker-alt"></i> University Campus, India</p>
         </div>
 
-        <!-- Developer Section -->
         <div class="footer-section about-developers">
             <a href="https://imranshaikh1712.github.io/cards/" target="_blank">About Developers</a>
         </div>
-
     </div>
 
-    <!-- Copyright Section -->
     <div class="footer-bottom">
         <p>&copy; 2025 Student Activity Hub. All Rights Reserved.</p>
     </div>
 </footer>
 
-<!-- Font Awesome -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-
 </body>
 </html>
